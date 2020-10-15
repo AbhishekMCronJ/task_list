@@ -64,10 +64,12 @@ taskList.addEventListener('click', removeTask);
 
 
 function removeTask(e) {
-    console.log(e.target.parentElement.parentElement);
-    e.target.parentElement.parentElement.remove();
+    if (e.target.parentElement.classList.contains('delete-item')) {
+        console.log(e.target.parentElement.parentElement);
+        e.target.parentElement.parentElement.remove();
 
-    removeTaskLS(e.target.parentElement.parentElement);
+        removeTaskLS(e.target.parentElement.parentElement);
+    }
 }
 
 function removeTaskLS(taskItem) {
